@@ -1,12 +1,12 @@
-const exprees = require ("express")
-const app=Express()
+const express = require ("express")
+const app=express()
 
 require ('dotenv').config()
 
 app.use(express.json())
 
-const router =require('./routes/productos.js')
+const product =require('./routes/productos')
+app.use("/api",product)
 
-app.use ("/api/productos")
 
 app.listen(process.env.PORT,() => console.log("server is running on port 5000"))
