@@ -4,6 +4,6 @@ export default async function handler(request, response) {
   const client = await db.connect();
  
    
-  const productos = await client.sql`SELECT * FROM productos;`;
-  return response.status(200).json({ productos: productos.rows  });
+  const venta = await client.sql`SELECT * FROM Venta;`;
+  return response.status(200).json({ ventas: venta.rows  });
 }
